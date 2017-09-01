@@ -1,7 +1,7 @@
 <template>
   <div class='card-list' >
     <div v-for="pattern in patterns">
-      <div class='card'>
+      <div class='card col-8 offset-2'>
         <h3 class='card-title'> {{pattern.title}} Pattern</h3>
         <div class='card-content'>    
           <p> {{pattern.content}}</p>
@@ -105,9 +105,11 @@ export default {
 <style>
 .card-list {
   background: pink;
+  padding-top: .75em;
 }
 .card {
-  margin-bottom: 2em;
+  margin: .75em auto;
+  
 }
 .card-content{
   border-bottom: 1px solid gray;
