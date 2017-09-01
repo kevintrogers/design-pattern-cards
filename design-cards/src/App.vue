@@ -1,7 +1,8 @@
 <template>
   <div class='card-list' >
-    <div v-for="pattern in patterns">
-      <div class='card col-8 offset-2'>
+    <div v-for="(pattern, i) in patterns">
+      <div class='card col-8 offset-2' v-if="counter === i">
+        <h6>{{i}}:{{counter}}</h6>
         <h3 class='card-title'> {{pattern.title}} Pattern</h3>
         <div class='card-content'>    
           <p> {{pattern.content}}</p>
@@ -15,6 +16,10 @@
       </div>
   
     </div>
+    <div class='btn-group col-2 offset-5'>
+      <button type='button' class='btn btn-down' @click='counter--'><</button>
+      <button type='button' class='btn btn-up' @click='counter++'>></button>
+    </div>
   </div>
 
 </template>
@@ -25,6 +30,7 @@
 export default {
   data: function () {
     return {
+      counter: 0,
       patterns: [ 
         { title: 'Abstract Factory',
           content: 'Groups object factories that have a common theme',
@@ -103,8 +109,11 @@ export default {
 </script>
 
 <style>
+html {
+  background: lightblue;
+}
 .card-list {
-  background: pink;
+  background: lightblue;
   padding-top: .75em;
 }
 .card {
@@ -113,6 +122,18 @@ export default {
 }
 .card-content{
   border-bottom: 1px solid gray;
+}
+.btn-group {
+  text-align:center;
+}
+.btn-down{
+  color:white;
+  background:purple;
+}
+.btn-up{
+  color:white;
+  background:rebeccapurple;
+  
 }
 
 </style>
