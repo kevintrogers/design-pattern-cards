@@ -1,5 +1,7 @@
 <template>
+  
   <div class='card-list' >
+    <h1>Design Pattern Flash Cards</h1>
     <div v-for="(pattern, i) in patterns">
       <div class='card col-8 offset-2' v-if="counter === i">
         <h6>{{i}}:{{counter}}</h6>
@@ -129,7 +131,7 @@ html {
 .example{
   border:none;
 }
-.btn-group, .example {
+.btn-group, .example, h1 {
   text-align:center;
   
 }
