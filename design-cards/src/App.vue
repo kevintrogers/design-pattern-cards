@@ -1,4 +1,8 @@
 <template>
+  <div class='card'>
+    <card-title></card-title>
+    <di
+  </div>
 
 </template>
 
