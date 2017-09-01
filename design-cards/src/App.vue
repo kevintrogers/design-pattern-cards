@@ -10,7 +10,7 @@
         <div class='card-content'>    
           <p> {{pattern.useCase}}</p>
         </div>
-        <div class='card-content'>
+        <div class='card-content example'>
           <a :href="pattern.source">Example</a>
         </div>  
       </div>
@@ -25,12 +25,12 @@
 </template>
 
 <script>
-
+;
 
 export default {
   data: function () {
     return {
-      counter: 0,
+    counter: 0,
       patterns: [ 
         { title: 'Abstract Factory',
           content: 'Groups object factories that have a common theme',
@@ -101,10 +101,13 @@ export default {
         
       ]
     }
-    
+  },
+  methods: {
+    displayCard: function (direction) {
+      
+    }
   }
-  
-  
+    
 }
 </script>
 
@@ -121,10 +124,14 @@ html {
   
 }
 .card-content{
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid lightblue;
 }
-.btn-group {
+.example{
+  border:none;
+}
+.btn-group, .example {
   text-align:center;
+  
 }
 .btn-down{
   color:white;
