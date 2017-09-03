@@ -4,17 +4,20 @@
     <h1>Design Pattern Flash Cards</h1>
     <div v-for="(pattern, i) in patterns">
       <div class='card col-8 offset-2' v-if="counter === i">
-        <h6>{{i}}:{{counter}}</h6>
+        
         <h3 class='card-title'> {{pattern.title}} Pattern</h3>
         <div class='card-content'>    
           <p> {{pattern.content}}</p>
         </div>
+        
         <div class='card-content'>    
           <p> {{pattern.useCase}}</p>
         </div>
+        
         <div class='card-content example'>
           <a :href="pattern.source">Example</a>
-        </div>  
+        </div> 
+        
       </div>
   
     </div>
