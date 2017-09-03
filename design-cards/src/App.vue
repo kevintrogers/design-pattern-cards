@@ -18,11 +18,16 @@
           <a :href="pattern.source">Example</a>
         </div> 
         
+        <div class='btn-group'>
+          <button class='btn desc-btn' type='button' v-if='!pattern.checkDescription' @click='showDescription'>Description</button>
+          <button class='btn use-case-btn' type='button' v-if='!pattern.checkUseCase' @click='showUseCase'>Use Case</button>
+          <button class='btn example-btn' type='button' v-if='!pattern.checkExample' @click='showExample'>Example</button>
+        </div>
       </div>
   
     </div>
     <div class='btn-group col-2 offset-5'>
-      <button type='button' class='btn btn-down' @click='counterDown()'><</button>
+      <button type='button' class='btn btn-down' @click='counterDown'><</button>
       <button type='button' class='btn btn-up' @click='counterUp'>></button>
     </div>
   </div>
@@ -30,7 +35,7 @@
 </template>
 
 <script>
-;
+
 
 export default {
   data: function () {
@@ -41,100 +46,70 @@ export default {
           description: 'Groups object factories that have a common theme',
           useCase: 'When this happens...',
           example: 'For Example...',
-          source: 'http://spicymonkeymedia.com',
-          checkDescription: true,
-          checkUseCase: false,
-          checkExample: false
+          source: 'http://spicymonkeymedia.com'
         },
         { title: 'Factory Method',
           description: 'Creates objects without specifying exact class',
           useCase: 'When this happens...',
           example: 'For Example...',
-          source: 'http://spicymonkeymedia.com',
-          checkDescription: true,
-          checkUseCase: false,
-          checkExample: false
+          source: 'http://spicymonkeymedia.com'
         },
         { title: 'Builder',
           description: 'Groups object factories that have a common theme',
           useCase: 'When this happens...',
           example: 'For Example...',
-          source: 'http://spicymonkeymedia.com',
-          checkDescription: true,
-          checkUseCase: false,
-          checkExample: false
+          source: 'http://spicymonkeymedia.com'
         },
         { title: 'Prototype',
           description: 'Clones existing objects in order to create new objects',
           useCase: 'When this happens...',
           example: 'For Example...',
-          source: 'http://spicymonkeymedia.com',
-          checkDescription: true,
-          checkUseCase: false,
-          checkExample: false
+          source: 'http://spicymonkeymedia.com'
         },
         { title: 'Dependency Injection',
           description: 'A class accepts objects it requires from an injector instead of doing it directly',
           useCase: 'When this happens...',
           example: 'For Example...',
-          source: 'http://spicymonkeymedia.com',
-          checkDescription: true,
-          checkUseCase: false,
-          checkExample: false
+          source: 'http://spicymonkeymedia.com'
         },
          { title: 'Lazy Initialization',
           description: 'Delays creation of a resource consuming object until a more appropriate time',
           useCase: 'When this happens...',
           example: 'For Example...',
-          source: 'http://spicymonkeymedia.com',
-          checkDescription: true,
-          checkUseCase: false,
-          checkExample: false
+          source: 'http://spicymonkeymedia.com'
         },
          { title: 'Multition',
           description: 'Ensure a class only has named instances and provide a GPOA',
           useCase: 'When this happens...',
           example: 'For Example...',
-          source: 'http://spicymonkeymedia.com',
-          checkDescription: true,
-          checkUseCase: false,
-          checkExample: false
+          source: 'http://spicymonkeymedia.com'
         },
          { title: 'Object Pool',
           description: 'Recycles resources no longer in use in order to optimize resources',
           useCase: 'When this happens...',
           example: 'For Example...',
-          source: 'http://spicymonkeymedia.com',
-          checkDescription: true,
-          checkUseCase: false,
-          checkExample: false
+          source: 'http://spicymonkeymedia.com'
         },
          { title: 'Singleton',
           description: 'Ensure a class only has one instance and provide GPOA',
           useCase: 'When this happens...',
           example: 'For Example...',
-          source: 'http://spicymonkeymedia.com',
-          checkDescription: true,
-          checkUseCase: false,
-          checkExample: false
+          source: 'http://spicymonkeymedia.com'
+
         },
          { title: 'Resource acquisition is initialization (RIIA)',
           description: 'Ensure that resourcesare properly released by tying them to the lifespan of related object',
           useCase: 'When this happens...',
           example: 'For Example...',
           source: 'http://spicymonkeymedia.com',
-          checkDescription: true,
-          checkUseCase: false,
-          checkExample: false
+
         },
          { title: 'Abstract Factory',
           description: 'Groups object factories that have a common theme',
           useCase: 'When this happens...',
           example: 'For Example...',
           source: 'http://spicymonkeymedia.com',
-          checkDescription: true,
-          checkUseCase: false,
-          checkExample: false
+
         },
         
       ]
@@ -154,10 +129,27 @@ export default {
       } else {
         this.counter = 0;
       }
+    },
+    showDescription: function() {
+
+      this.checkDescription = false;
+      this.checkUseCase = true;
+      this.checkExample = false;
+      
+    },
+    showUseCase: function() {
+      this.patterns.checkDescription = false;
+      this.checkUseCase = true;
+      this.checkExample = false;
+    },
+    showExample: function() {
+      this.patterns.checkDescription = false;
+      this.data.patterns.checkUseCase = false;
+      this.data.patterns.checkExample = true;
     }
-  }
-  
-}
+  },
+
+};
 </script>
 
 <style>
@@ -175,19 +167,28 @@ html {
 .card-content{
 
 }
-
+.btn {
+  color: white;
+}
+.desc-btn {
+  background: purple;
+}
+.use-case-btn {
+  background: violet;
+}
+.example-btn {
+  background: rebeccapurple;
+}
 .btn-group, .example, h1 {
   text-align:center;
   
 }
 .btn-down{
-  color:white;
   background:purple;
 }
+
 .btn-up{
-  color:white;
-  background:rebeccapurple;
-  
+    background:rebeccapurple;
 }
 
 </style>
