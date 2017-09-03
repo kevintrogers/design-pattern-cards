@@ -125,6 +125,7 @@ export default {
       } else {
         this.counter = this.patterns.length - 1;
       }
+      this.revealDescription();
     },
     counterUp: function () {
       if (this.counter !== this.patterns.length-1) {
@@ -132,6 +133,7 @@ export default {
       } else {
         this.counter = 0;
       }
+      this.revealDescription();
     },
     revealDescription:  function() {
       this.showDescription = true;
