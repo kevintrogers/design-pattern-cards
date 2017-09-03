@@ -129,25 +129,8 @@ export default {
       } else {
         this.counter = 0;
       }
-    },
-    showDescription: function() {
-
-      this.checkDescription = false;
-      this.checkUseCase = true;
-      this.checkExample = false;
-      
-    },
-    showUseCase: function() {
-      this.patterns.checkDescription = false;
-      this.checkUseCase = true;
-      this.checkExample = false;
-    },
-    showExample: function() {
-      this.patterns.checkDescription = false;
-      this.data.patterns.checkUseCase = false;
-      this.data.patterns.checkExample = true;
     }
-  },
+  }
 
 };
 </script>
