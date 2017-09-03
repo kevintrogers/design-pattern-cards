@@ -6,15 +6,15 @@
       <div class='card col-8 offset-2' v-if="counter === i">
         
         <h3 class='card-title'> {{pattern.title}} Pattern</h3>
-        <div class='card-content'>    
-          <p> {{pattern.content}}</p>
+        <div class='card-content' v-if='pattern.checkDescription'>    
+          <p> {{pattern.description}}</p>
         </div>
         
-        <div class='card-content'>    
+        <div class='card-content' v-if='pattern.checkUseCase'>    
           <p> {{pattern.useCase}}</p>
         </div>
         
-        <div class='card-content example'>
+        <div class='card-content example' v-if='pattern.checkExample'>
           <a :href="pattern.source">Example</a>
         </div> 
         
@@ -38,70 +38,103 @@ export default {
     counter: 0,
       patterns: [ 
         { title: 'Abstract Factory',
-          content: 'Groups object factories that have a common theme',
+          description: 'Groups object factories that have a common theme',
           useCase: 'When this happens...',
           example: 'For Example...',
-          source: 'http://spicymonkeymedia.com'
+          source: 'http://spicymonkeymedia.com',
+          checkDescription: true,
+          checkUseCase: false,
+          checkExample: false
         },
         { title: 'Factory Method',
-          content: 'Creates objects without specifying exact class',
+          description: 'Creates objects without specifying exact class',
           useCase: 'When this happens...',
           example: 'For Example...',
-          source: 'http://spicymonkeymedia.com'
+          source: 'http://spicymonkeymedia.com',
+          checkDescription: true,
+          checkUseCase: false,
+          checkExample: false
         },
         { title: 'Builder',
-          content: 'Groups object factories that have a common theme',
+          description: 'Groups object factories that have a common theme',
           useCase: 'When this happens...',
           example: 'For Example...',
-          source: 'http://spicymonkeymedia.com'
+          source: 'http://spicymonkeymedia.com',
+          checkDescription: true,
+          checkUseCase: false,
+          checkExample: false
         },
         { title: 'Prototype',
-          content: 'Clones existing objects in order to create new objects',
+          description: 'Clones existing objects in order to create new objects',
           useCase: 'When this happens...',
           example: 'For Example...',
-          source: 'http://spicymonkeymedia.com'
+          source: 'http://spicymonkeymedia.com',
+          checkDescription: true,
+          checkUseCase: false,
+          checkExample: false
         },
         { title: 'Dependency Injection',
-          content: 'A class accepts objects it requires from an injector instead of doing it directly',
+          description: 'A class accepts objects it requires from an injector instead of doing it directly',
           useCase: 'When this happens...',
           example: 'For Example...',
-          source: 'http://spicymonkeymedia.com'
+          source: 'http://spicymonkeymedia.com',
+          checkDescription: true,
+          checkUseCase: false,
+          checkExample: false
         },
          { title: 'Lazy Initialization',
-          content: 'Delays creation of a resource consuming object until a more appropriate time',
+          description: 'Delays creation of a resource consuming object until a more appropriate time',
           useCase: 'When this happens...',
           example: 'For Example...',
-          source: 'http://spicymonkeymedia.com'
+          source: 'http://spicymonkeymedia.com',
+          checkDescription: true,
+          checkUseCase: false,
+          checkExample: false
         },
          { title: 'Multition',
-          content: 'Ensure a class only has named instances and provide a GPOA',
+          description: 'Ensure a class only has named instances and provide a GPOA',
           useCase: 'When this happens...',
           example: 'For Example...',
-          source: 'http://spicymonkeymedia.com'
+          source: 'http://spicymonkeymedia.com',
+          checkDescription: true,
+          checkUseCase: false,
+          checkExample: false
         },
          { title: 'Object Pool',
-          content: 'Recycles resources no longer in use in order to optimize resources',
+          description: 'Recycles resources no longer in use in order to optimize resources',
           useCase: 'When this happens...',
           example: 'For Example...',
-          source: 'http://spicymonkeymedia.com'
+          source: 'http://spicymonkeymedia.com',
+          checkDescription: true,
+          checkUseCase: false,
+          checkExample: false
         },
          { title: 'Singleton',
-          content: 'Ensure a class only has one instance and provide GPOA',
+          description: 'Ensure a class only has one instance and provide GPOA',
           useCase: 'When this happens...',
           example: 'For Example...',
-          source: 'http://spicymonkeymedia.com'
+          source: 'http://spicymonkeymedia.com',
+          checkDescription: true,
+          checkUseCase: false,
+          checkExample: false
         },
          { title: 'Resource acquisition is initialization (RIIA)',
-          content: 'Ensure that resourcesare properly released by tying them to the lifespan of related object',
+          description: 'Ensure that resourcesare properly released by tying them to the lifespan of related object',
           useCase: 'When this happens...',
           example: 'For Example...',
-          source: 'http://spicymonkeymedia.com'
+          source: 'http://spicymonkeymedia.com',
+          checkDescription: true,
+          checkUseCase: false,
+          checkExample: false
         },
          { title: 'Abstract Factory',
-          content: 'Groups object factories that have a common theme',
+          description: 'Groups object factories that have a common theme',
           useCase: 'When this happens...',
           example: 'For Example...',
-          source: 'http://spicymonkeymedia.com'
+          source: 'http://spicymonkeymedia.com',
+          checkDescription: true,
+          checkUseCase: false,
+          checkExample: false
         },
         
       ]
@@ -140,11 +173,9 @@ html {
   
 }
 .card-content{
-  border-bottom: 1px solid lightblue;
+
 }
-.example{
-  border:none;
-}
+
 .btn-group, .example, h1 {
   text-align:center;
   
