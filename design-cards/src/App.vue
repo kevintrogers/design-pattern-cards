@@ -19,8 +19,8 @@
   
     </div>
     <div class='btn-group col-2 offset-5'>
-      <button type='button' class='btn btn-down' @click='counter--'><</button>
-      <button type='button' class='btn btn-up' @click='counter++'>></button>
+      <button type='button' class='btn btn-down' @click='counterDown()'><</button>
+      <button type='button' class='btn btn-up' @click='counterUp'>></button>
     </div>
   </div>
 
@@ -105,11 +105,22 @@ export default {
     }
   },
   methods: {
-    displayCard: function (direction) {
-      
+    counterDown: function () {
+      if (this.counter !== 0) {
+        this.counter--;
+      } else {
+        this.counter = this.patterns.length - 1;
+      }
+    },
+    counterUp: function () {
+      if (this.counter !== this.patterns.length-1) {
+        this.counter++;
+      } else {
+        this.counter = 0;
+      }
     }
   }
-    
+  
 }
 </script>
 
