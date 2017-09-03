@@ -6,22 +6,22 @@
       <div class='card col-8 offset-2' v-if="counter === i">
         
         <h3 class='card-title'> {{pattern.title}} Pattern</h3>
-        <div class='card-content' v-if='pattern.checkDescription'>    
+        <div class='card-content' v-if='showDescription'>    
           <p> {{pattern.description}}</p>
         </div>
         
-        <div class='card-content' v-if='pattern.checkUseCase'>    
+        <div class='card-content' v-if='showUseCase'>    
           <p> {{pattern.useCase}}</p>
         </div>
         
-        <div class='card-content example' v-if='pattern.checkExample'>
+        <div class='card-content example' v-if='showExample'>
           <a :href="pattern.source">Example</a>
         </div> 
         
         <div class='btn-group'>
-          <button class='btn desc-btn' type='button' v-if='!pattern.checkDescription' @click='showDescription'>Description</button>
-          <button class='btn use-case-btn' type='button' v-if='!pattern.checkUseCase' @click='showUseCase'>Use Case</button>
-          <button class='btn example-btn' type='button' v-if='!pattern.checkExample' @click='showExample'>Example</button>
+          <button class='btn desc-btn' type='button' v-if='!showDescription' @click='revealDescription'>Description</button>
+          <button class='btn use-case-btn' type='button' v-if='!showUseCase' @click='revealUseCase'>Use Case</button>
+          <button class='btn example-btn' type='button' v-if='!showExample' @click='revealExample'>Example</button>
         </div>
       </div>
   
@@ -41,6 +41,9 @@ export default {
   data: function () {
     return {
     counter: 0,
+    showDescription: true,
+    showUseCase: false,
+    showExample: false,
       patterns: [ 
         { title: 'Abstract Factory',
           description: 'Groups object factories that have a common theme',
@@ -129,8 +132,25 @@ export default {
       } else {
         this.counter = 0;
       }
+    },
+    revealDescription:  function() {
+      this.showDescription = true;
+      this.showUseCase = false;
+      this.showExample=false;
+    },
+    revealUseCase: function() {
+      this.showDescription = false;
+      this.showUseCase = true;
+      this.showExample=false;
+    },
+    revealExample: function() {
+      this.showDescription = false;
+      this.showUseCase = false;
+      this.showExample= true;
     }
+    
   }
+  
 
 };
 </script>
