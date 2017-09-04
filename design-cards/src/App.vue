@@ -2,7 +2,7 @@
   
   <div class='card-list' >
     <h1>Design Pattern Flash Cards</h1>
-    <div v-for="(pattern, i) in patterns">
+    <div v-for="pattern in patterns">
       <div class='card col-8 offset-2' v-if="counter === i">
         
         <h3 class='card-title'> {{pattern.title}} Pattern</h3>
@@ -49,7 +49,8 @@ export default {
           description: 'Groups object factories that have a common theme',
           useCase: 'When this happens...',
           example: 'For Example...',
-          source: 'http://spicymonkeymedia.com'
+          source: 'http://spicymonkeymedia.com',
+          removeFromSet: false
         },
         { title: 'Factory Method',
           description: 'Creates objects without specifying exact class',
