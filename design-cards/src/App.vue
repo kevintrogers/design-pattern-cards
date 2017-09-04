@@ -173,6 +173,7 @@ label {
 #remove{
   position:relative;
   bottom: 1.5em;
+  margin-bottom: -1.25em;
 }
 .card-list {
   background: lightblue;
@@ -183,6 +184,7 @@ label {
   
 }
 .card-content{
+  border-top: 1px solid lightblue;
 
 }
 .btn {
