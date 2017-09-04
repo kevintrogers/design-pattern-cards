@@ -3,9 +3,12 @@
   <div class='card-list' >
     <h1>Design Pattern Flash Cards</h1>
     <div v-for="pattern in patterns">
-      <div class='card col-8 offset-2' v-if="counter === i">
+      <div class='card col-8 offset-2' v-if="!pattern.removeFromSet">
         
         <h3 class='card-title'> {{pattern.title}} Pattern</h3>
+        
+        <label for='remove'>Remove from Set</label>
+        <input type='checkbox' id='remove' value='pattern.removeFromSet'>
         <div class='card-content' v-if='showDescription'>    
           <p> {{pattern.description}}</p>
         </div>
@@ -161,6 +164,15 @@ export default {
 <style>
 html {
   background: lightblue;
+}
+label {
+  position:relative;
+  left: 1.5em;
+  font-weight:100;
+}
+#remove{
+  position:relative;
+  bottom: 1.5em;
 }
 .card-list {
   background: lightblue;
