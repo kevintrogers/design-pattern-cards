@@ -3,7 +3,7 @@
   <div class='card-list' >
     <h1>Design Pattern Flash Cards</h1>
     <div v-for="(pattern, i) in patterns">
-      <div class='card col-8 offset-2' v-if="counter === i  && !pattern.removeFromSet">
+      <div class='card col-8 offset-2' v-if="counter === i">
         
         <h3 class='card-title'> {{pattern.title}} Pattern</h3>
         
@@ -117,23 +117,30 @@ export default {
   },
   methods: {
     counterDown: function () {
-      
+      if (this.patterns.removeFromSet == true) {
+        this.removeFromPatternsArray();
+        this.counterDown();
+      }
       if (this.counter !== 0) {
         this.counter--;
       } else {
         this.counter = this.patterns.length - 1;
       }
-      this.removalCheck();
+      
       this.revealDescription();
     },
     counterUp: function () {
-      
+      if (this.patterns.removeFromSet == true) {
+        this.removeFromPatternsArray();
+        this.counterUp();
+      }
+      this.removeFromPatternsArray();
       if (this.counter !== this.patterns.length-1) {
         this.counter++;
       } else {
         this.counter = 0;
       }
-      this.removalCheck();
+      
       this.revealDescription();
     },
     revealDescription:  function() {
@@ -150,10 +157,14 @@ export default {
       this.showDescription = false;
       this.showUseCase = false;
       this.showExample= true;
+    },
+    removeFromPatternsArray: function(){
+      
+            
+            this.patterns.splice(this.counter, 1)
+      }
     }
-  }
   
-
 };
 </script>
 
