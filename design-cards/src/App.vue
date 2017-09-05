@@ -3,12 +3,12 @@
   <div class='card-list' >
     <h1>Design Pattern Flash Cards</h1>
     <div v-for="(pattern, i) in patterns">
-      <div class='card col-8 offset-2' v-if="counter === i">
+      <div class='card col-8 offset-2' v-if="counter === i  && !pattern.removeFromSet">
         
         <h3 class='card-title'> {{pattern.title}} Pattern</h3>
         
         <label for='remove'>Remove from Set</label>
-        <input type='checkbox' id='remove' name='removeFromSet' value='true'>
+        <input type='checkbox' id='remove' name='removeFromSet' v-model='pattern.removeFromSet'>
         <div class='card-content' v-if='showDescription'>    
           <p> {{pattern.description}}</p>
         </div>
@@ -110,33 +110,30 @@ export default {
           example: 'For Example...',
           source: 'http://spicymonkeymedia.com',
 
-        },
-         { title: 'Abstract Factory',
-          description: 'Groups object factories that have a common theme',
-          useCase: 'When this happens...',
-          example: 'For Example...',
-          source: 'http://spicymonkeymedia.com',
-
-        },
+        }
         
       ]
     }
   },
   methods: {
     counterDown: function () {
+      
       if (this.counter !== 0) {
         this.counter--;
       } else {
         this.counter = this.patterns.length - 1;
       }
+      this.removalCheck();
       this.revealDescription();
     },
     counterUp: function () {
+      
       if (this.counter !== this.patterns.length-1) {
         this.counter++;
       } else {
         this.counter = 0;
       }
+      this.removalCheck();
       this.revealDescription();
     },
     revealDescription:  function() {
@@ -154,7 +151,6 @@ export default {
       this.showUseCase = false;
       this.showExample= true;
     }
-    
   }
   
 
