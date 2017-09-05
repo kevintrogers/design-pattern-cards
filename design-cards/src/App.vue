@@ -6,9 +6,9 @@
       <div class='card col-8 offset-2' v-if="counter === i">
         
         <h3 class='card-title'> {{pattern.title}} Pattern</h3>
-        
+        {{counter}} : {{i}}
         <label for='remove'>Remove from Set</label>
-        <input type='checkbox' id='remove' name='removeFromSet' v-model='pattern.removeFromSet'>
+        <input type='checkbox' id='remove' name='removeFromSet' v-model='pattern.removeFromSet' @click='removeFromPatternsArray'>
         <div class='card-content' v-if='showDescription'>    
           <p> {{pattern.description}}</p>
         </div>
@@ -118,9 +118,9 @@ export default {
   methods: {
     counterDown: function () {
       if (this.patterns.removeFromSet == true) {
-        this.removeFromPatternsArray();
         this.counterDown();
       }
+      
       if (this.counter !== 0) {
         this.counter--;
       } else {
@@ -131,10 +131,9 @@ export default {
     },
     counterUp: function () {
       if (this.patterns.removeFromSet == true) {
-        this.removeFromPatternsArray();
         this.counterUp();
       }
-      this.removeFromPatternsArray();
+      
       if (this.counter !== this.patterns.length-1) {
         this.counter++;
       } else {
@@ -159,9 +158,8 @@ export default {
       this.showExample= true;
     },
     removeFromPatternsArray: function(){
-      
-            
             this.patterns.splice(this.counter, 1)
+            this.counterUp();
       }
     }
   
