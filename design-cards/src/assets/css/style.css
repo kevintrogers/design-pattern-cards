@@ -1,0 +1,52 @@
+html {
+  background: lightblue;
+}
+label {
+  position:relative;
+  left: 1.5em;
+  font-weight:100;
+}
+#remove{
+  position:relative;
+  bottom: 1.5em;
+  margin-bottom: -1.25em;
+}
+.card-list {
+  background: lightblue;
+  padding-top: .75em;
+}
+.card {
+  margin: .75em auto;
+}
+.card-content{
+  border-top: 1px solid lightblue;
+
+}
+.btn {
+  color: white;
+}
+.desc-btn {
+  background: purple;
+}
+.use-case-btn {
+  background: violet;
+}
+.example-btn {
+  background: rebeccapurple;
+}
+.card .btn-group {
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 1em;
+}
+.btn-group, .example, h1 {
+  text-align:center;
+  
+}
+.btn-down{
+  background:purple;
+}
+
+.btn-up{
+    background:rebeccapurple;
+}

@@ -6,8 +6,7 @@
       <div class='card col-8 offset-2' v-if="counter === i">
         
         <h3 class='card-title'> {{pattern.title}} Pattern</h3>
-        {{counter}} : {{i}}
-        <label for='remove'>Remove from Set</label>
+          <label for='remove'>Remove from Set</label>
         <input type='checkbox' id='remove' name='removeFromSet' v-model='pattern.removeFromSet' @click='removeFromPatternsArray'>
         <div class='card-content' v-if='showDescription'>    
           <p> {{pattern.description}}</p>
@@ -17,7 +16,7 @@
           <p> {{pattern.useCase}}</p>
         </div>
         
-        <div class='card-content example' v-if='showExample'>
+        <div class='modal example' v-if='showExample'>
           <a :href="pattern.source">Example</a>
         </div> 
         
@@ -167,57 +166,5 @@ export default {
 </script>
 
 <style>
-html {
-  background: lightblue;
-}
-label {
-  position:relative;
-  left: 1.5em;
-  font-weight:100;
-}
-#remove{
-  position:relative;
-  bottom: 1.5em;
-  margin-bottom: -1.25em;
-}
-.card-list {
-  background: lightblue;
-  padding-top: .75em;
-}
-.card {
-  margin: .75em auto;
-}
-.card-content{
-  border-top: 1px solid lightblue;
-
-}
-.btn {
-  color: white;
-}
-.desc-btn {
-  background: purple;
-}
-.use-case-btn {
-  background: violet;
-}
-.example-btn {
-  background: rebeccapurple;
-}
-.card .btn-group {
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 1em;
-}
-.btn-group, .example, h1 {
-  text-align:center;
-  
-}
-.btn-down{
-  background:purple;
-}
-
-.btn-up{
-    background:rebeccapurple;
-}
-
+@import url('./assets/css/style.css');
 </style>
