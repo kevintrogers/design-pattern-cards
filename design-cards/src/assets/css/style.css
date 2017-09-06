@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+
 html {
   background: lightblue;
 }
@@ -27,10 +29,24 @@ label {
     top:16.666vh;
     left:16.666vw;
     width:66.666vw;
-    height:66.666vh;
+    height:auto;
     z-index:999;
     background: lightgray;
     border-radius:4px;
+}
+.exit {
+    color: violet;
+    margin-right:.5em;
+    margin-left:auto;
+    
+}
+.modal-content{
+    margin:.375em;
+}
+.modal-content p {
+    text-align: left;
+    padding:.35em 1.15em .05em;
+    font-family: Ubuntu Mono;
 }
 .btn {
   color: white;
