@@ -20,7 +20,17 @@ label {
 }
 .card-content{
   border-top: 1px solid lightblue;
-
+}
+.modal {
+    display:block;
+    position: fixed;
+    top:16.666vh;
+    left:16.666vw;
+    width:66.666vw;
+    height:66.666vh;
+    z-index:999;
+    background: lightgray;
+    border-radius:4px;
 }
 .btn {
   color: white;
