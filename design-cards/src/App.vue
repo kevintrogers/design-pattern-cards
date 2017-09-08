@@ -17,9 +17,10 @@
         </div>
         
         <div class='modal example' v-if='showExample'>
+          
+            <span class='exit' @click='showExample = !showExample'>X</span>
           <a :href="pattern.source">Example</a>
           <div class='modal-content'>
-            <span class='exit' @click='showExample = !showExample'>X</span>
             <p>var here = 'where code examples go.'</p>
             <p>function why() {<br>
             &nbsp;&nbsp;return {<br>

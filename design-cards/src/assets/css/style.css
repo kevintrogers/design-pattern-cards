@@ -18,6 +18,7 @@ label {
   padding-top: .75em;
 }
 .card {
+  height: 100%;
   margin: .75em auto;
 }
 .card-content{
@@ -26,26 +27,35 @@ label {
 .modal {
     display:block;
     position: fixed;
-    top:16.666vh;
-    left:16.666vw;
-    width:66.666vw;
+    top:16.666%;
+    left:16.666%;
+    width:64.333%;
     height:auto;
     z-index:999;
     background: lightgray;
     border-radius:4px;
 }
 .exit {
-    color: violet;
+  float: right;
+    color: #282828;
     margin-right:.5em;
     margin-left:auto;
     
 }
+.modal {
+  margin:.375em;
+  background: violet;
+  padding:.05em 1.15em .05em; 
+}
+.modal a {
+  color: rebeccapurple;
+}
 .modal-content{
-    margin:.375em;
+   padding:.35em 1.15em .05em; 
+   border-color: purple;
 }
 .modal-content p {
     text-align: left;
-    padding:.35em 1.15em .05em;
     font-family: Ubuntu Mono;
 }
 .btn {
