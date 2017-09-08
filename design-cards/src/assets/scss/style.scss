@@ -24,15 +24,16 @@ label {
 .card-content{
   border-top: 1px solid lightblue;
 }
+
 .modal {
     display:block;
     position: fixed;
-    top:16.666%;
-    left:16.666%;
-    width:64.333%;
-    height:auto;
+    top:16.6667%;
+    left:17.333%;
+    width:64.6667%;
     z-index:999;
-    background: lightgray;
+    margin:.225%;
+    background: violet;
     border-radius:4px;
 }
 .exit {
@@ -43,14 +44,14 @@ label {
     
 }
 .modal {
-  margin:.375em;
-  background: violet;
-  padding:.05em 1.15em .05em; 
+ 
 }
 .modal a {
   color: rebeccapurple;
 }
 .modal-content{
+  margin-left:1.25%;
+   width: 97.5%;
    padding:.35em 1.15em .05em; 
    border-color: purple;
 }
