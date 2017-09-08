@@ -3,7 +3,7 @@
   <div class='card-list' >
     <h1>Design Pattern Flash Cards</h1>
     <div v-for="(pattern, i) in patterns">
-      <div class='card col-8 offset-2' v-if="counter === i">
+      <div class='card col-8 offset-2' v-if="counter === i && !showExample">
         
         <h3 class='card-title'> {{pattern.title}} Pattern</h3>
           <label for='remove'>Remove from Set</label>
@@ -16,7 +16,15 @@
           <p> {{pattern.useCase}}</p>
         </div>
         
-        <div class='modal example' v-if='showExample'>
+ 
+        
+        <div class='btn-group'>
+          <button class='btn desc-btn' type='button' v-if='!showDescription' @click='revealDescription'>Description</button>
+          <button class='btn use-case-btn' type='button' v-if='!showUseCase' @click='revealUseCase'>Use Case</button>
+          <button class='btn example-btn' type='button' v-if='!showExample' @click='revealExample'>Example</button>
+        </div>
+      </div>
+              <div class='modal example' v-if='showExample'>
           
             <span class='exit' @click='showExample = !showExample'>X</span>
           <a :href="pattern.source">Example</a>
@@ -28,17 +36,10 @@
             &nbsp;&nbsp;}<br>
             }</p>
           </div>
-        </div> 
-        
-        <div class='btn-group'>
-          <button class='btn desc-btn' type='button' v-if='!showDescription' @click='revealDescription'>Description</button>
-          <button class='btn use-case-btn' type='button' v-if='!showUseCase' @click='revealUseCase'>Use Case</button>
-          <button class='btn example-btn' type='button' v-if='!showExample' @click='revealExample'>Example</button>
         </div>
-      </div>
   
     </div>
-    <div class='btn-group col-2 offset-5'>
+    <div class='btn-group col-2 offset-5' v-if='!showExample'>
       <button type='button' class='btn btn-down' @click='counterDown'><</button>
       <button type='button' class='btn btn-up' @click='counterUp'>></button>
     </div>
