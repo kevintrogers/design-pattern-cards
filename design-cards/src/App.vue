@@ -24,7 +24,7 @@
           <button class='btn example-btn' type='button' v-if='!showExample' @click='revealExample'>Example</button>
         </div>
       </div>
-              <div class='modal example' v-if='showExample'>
+              <div class='my-modal example' v-if='showExample'>
           
             <span class='exit' @click='showExample = !showExample'>X</span>
           <a :href="pattern.source">Example</a>

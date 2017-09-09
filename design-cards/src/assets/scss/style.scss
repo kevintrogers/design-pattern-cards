@@ -25,12 +25,12 @@ label {
   border-top: 1px solid lightblue;
 }
 
-.modal {
+.my-modal {
     display:block;
     position: fixed;
     top:16.6667%;
-    left:17.333%;
-    width:64.6667%;
+    left:16.6667%;
+    width:66.6667%;
     z-index:999;
     margin:.3%;
     background: violet;
@@ -41,18 +41,15 @@ label {
     color: #282828;
     margin-right:.5em;
     margin-left:auto;
-    
 }
-.modal {
- 
-}
-.modal a {
+
+.my-modal a {
   color: rebeccapurple;
 }
 .modal-content{
-  margin-left:1.25%;
+   margin: 0 1.25% 1.25% ;
    width: 97.5%;
-   padding:.35em 1.15em .05em; 
+   padding:.35em 1.15em .15em; 
    border-color: purple;
 }
 .modal-content p {
